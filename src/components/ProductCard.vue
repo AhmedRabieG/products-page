@@ -31,19 +31,23 @@ const props = defineProps({
       }
       if (typeof value.name !== "string") {
         console.error(
-          `Invalid product id type  ${typeof value.name} and ID is ${value.id}`
+          `Invalid product name type  ${typeof value.name} and ID is ${
+            value.id
+          }`
         );
         isValid = false;
       }
       if (typeof value.price !== "number") {
         console.error(
-          `Invalid product id type  ${typeof value.price} and ID is ${value.id}`
+          `Invalid product price type  ${typeof value.price} and ID is ${
+            value.id
+          }`
         );
         isValid = false;
       }
       if (typeof value.description !== "string") {
         console.error(
-          `Invalid product id type  ${typeof value.description} and ID is ${
+          `Invalid product description type  ${typeof value.description} and ID is ${
             value.id
           }`
         );
@@ -51,13 +55,15 @@ const props = defineProps({
       }
       if (typeof value.image !== "string") {
         console.error(
-          `Invalid product id type  ${typeof value.image} and ID is ${value.id}`
+          `Invalid product image type  ${typeof value.image} and ID is ${
+            value.id
+          }`
         );
         isValid = false;
       }
       if (typeof value.inStock !== "boolean") {
         console.error(
-          `Invalid product id type  ${typeof value.inStock} and ID is ${
+          `Invalid product inStock type  ${typeof value.inStock} and ID is ${
             value.id
           }`
         );
