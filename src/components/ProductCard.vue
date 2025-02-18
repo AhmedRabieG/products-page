@@ -77,7 +77,7 @@ const props = defineProps({
     },
   },
 });
-console.log(props.product);
+
 const cartCount = ref(0);
 const isFavorite = ref(false);
 
