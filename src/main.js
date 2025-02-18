@@ -5,7 +5,6 @@ import App from './App.vue'
 import router from './router'
 import { createPinia } from 'pinia'
 import './stores/counter'
-import './stores/user'
 import 'font-awesome/css/font-awesome.min.css';
 
 

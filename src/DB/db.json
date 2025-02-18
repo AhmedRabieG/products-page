@@ -1,0 +1,59 @@
+{
+    "products":[
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "price": 99.99,
+      "description": "High-quality wireless headphones with noise cancellation",
+      "image": "/src/assets/images/head-1.webp",
+      "inStock": true
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "price": 499,
+      "description": "Latest smartphone with advanced features",
+      "inStock": true
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "price": 799.99,
+      "description": "Powerful laptop for work and play",
+      "image": "/src/assets/images/laptop.jpg",
+      "inStock": true
+    },
+    {
+      "id": 4,
+      "name": "Tablet",
+      "price": 299.99,
+      "description": "Portable tablet for entertainment",
+      "image": "/src/assets/images/tablet.avif",
+      "inStock": true
+    },
+    {
+      "id": 5,
+      "name": "Camera",
+      "price": 699.99,
+      "description": "High-quality digital camera for capturing moments",
+      "image": "/src/assets/images/cam3.jpg",
+      "inStock": true
+    },
+    {
+      "id": 6,
+      "name": "Camera",
+      "price": 399.99,
+      "description": "High-quality digital camera for capturing moments",
+      "image": "/src/assets/images/cam1.jpg",
+      "inStock": false
+    },
+    {
+      "id": 7,
+      "name": "Camera",
+      "price": 599.99,
+      "description": "High-quality digital camera for capturing moments",
+      "image": "/src/assets/images/cam2.jpg",
+      "inStock": true
+    }
+  ]
+}

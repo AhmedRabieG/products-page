@@ -1,76 +1,25 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import ProductCard from "../components/ProductCard.vue";
-
-import headImage from "../assets/images/head-1.webp";
-import smartImage from "../assets/images/smart.webp";
-import laptopImage from "../assets/images/laptop.jpg";
-import tabletImage from "../assets/images/tablet.avif";
-import cameraImage from "../assets/images/cam3.jpg";
-import cameraImage2 from "../assets/images/cam1.jpg";
-import cameraImage1 from "../assets/images/cam2.jpg";
-
-const products = [
-  {
-    id: 1,
-    name: "Wireless Headphones",
-    price: 99.99,
-    description: "High-quality wireless headphones with noise cancellation",
-    image: headImage,
-    inStock: true,
-  },
-  {
-    id: 2,
-    name: "Smartphone",
-    price: 499.99,
-    description: "Latest smartphone with advanced features",
-    inStock: true,
-  },
-  {
-    id: 3,
-    name: "Laptop",
-    price: 799.99,
-    description: "Powerful laptop for work and play",
-    image: laptopImage,
-    inStock: true,
-  },
-  {
-    id: 4,
-    name: "Tablet",
-    price: 299.99,
-    description: "Portable tablet for entertainment",
-    image: tabletImage,
-    inStock: false,
-  },
-  {
-    id: 5,
-    name: "Camera",
-    price: 699.99,
-    description: "High-quality digital camera for capturing moments",
-    image: cameraImage,
-    inStock: true,
-  },
-  {
-    id: 6,
-    name: "Camera",
-    price: 399.99,
-    description: "High-quality digital camera for capturing moments",
-    image: cameraImage2,
-    inStock: true,
-  },
-  {
-    id: 7,
-    name: "Camera",
-    price: 599.99,
-    description: "High-quality digital camera for capturing moments",
-    image: cameraImage1,
-    inStock: false,
-  },
-];
+import axios from "axios";
 
 const message = ref("");
 const loading = ref(true);
+const products = ref([]);
+const error = ref(null);
 
+const fetchProducts = async () => {
+  loading.value = true;
+  try {
+    const response = await axios.get("http://localhost:5000/products");
+    products.value = response.data;
+    // console.log(products.value);
+  } catch (err) {
+    error.value = "Failed to load products";
+  } finally {
+    loading.value = false;
+  }
+};
 const handleFavoriteToggle = (msg) => {
   message.value = msg;
   setTimeout(() => {
@@ -86,8 +35,8 @@ const handleAddToCart = (msg) => {
 };
 onMounted(() => {
   setTimeout(() => {
-    loading.value = false;
-  }, 2000);
+    fetchProducts();
+  }, 1000);
 });
 </script>
 
@@ -144,6 +93,7 @@ onMounted(() => {
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease;
+  z-index: 999;
 }
 .fade-enter-from,
 .fade-leave-to {
